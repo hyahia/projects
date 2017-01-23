@@ -1,0 +1,956 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>CBCM Project Management Tool V2.2</title>
+
+  <link rel=stylesheet href="platform.css" type="text/css">
+  <link rel=stylesheet href="libs/dateField/jquery.dateField.css" type="text/css">
+
+  <link rel=stylesheet href="gantt.css" type="text/css">
+  <link rel=stylesheet href="ganttPrint.css" type="text/css" media="print">
+  <link rel=stylesheet href="styles.css" type="text/css">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+  <script src="libs/jquery.livequery.min.js"></script>
+  <script src="libs/jquery.timers.js"></script>
+  <script src="libs/platform.js"></script>
+  <script src="libs/date.js"></script>
+  <script src="libs/i18nJs.js"></script>
+  <script src="libs/dateField/jquery.dateField.js"></script>
+  <script src="libs/JST/jquery.JST.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="libs/jquery.svg.css">
+  <script type="text/javascript" src="libs/jquery.svg.min.js"></script>
+
+  <!--In case of jquery 1.7-->
+  <!--<script type="text/javascript" src="libs/jquery.svgdom.pack.js"></script>-->
+
+  <!--In case of jquery 1.8-->
+  <script type="text/javascript" src="libs/jquery.svgdom.1.8.js"></script>
+
+
+  <script src="ganttUtilities.js"></script>
+  <script src="ganttTask.js"></script>
+  <script src="ganttDrawerSVG.js"></script>
+  <!--<script src="ganttDrawer.js"></script>-->
+  <script src="ganttGridEditor.js"></script>
+  <script src="ganttMaster.js"></script>  
+</head>
+<body style="background-color: #fff;">
+
+<div class="top-bar"><h1>CBCM Project Management Tool V2.2</h1></div>
+<div id="workSpace" style="padding:0px; overflow-y:auto; overflow-x:hidden;border:1px solid rgb(55, 55, 55);position:relative;margin:0 0px"></div>
+
+<div id="taZone" style="display:none;" class="noprint">
+   <textarea rows="8" cols="150" id="ta">
+     {"tasks":[
+     {"id":-1,"name":"Gantt editor","code":"","level":0,"status":"STATUS_ACTIVE","canWrite":true,"start":1396994400000,"duration":21,"end":1399672799999,"startIsMilestone":true,"endIsMilestone":false,"collapsed":false,"assigs":[],"hasChild":true}
+     ,{"id":-2,"name":"coding","code":"","level":1,"status":"STATUS_ACTIVE","canWrite":true,"start":1396994400000,"duration":10,"end":1398203999999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"description":"","progress":0,"hasChild":true}
+     ,{"id":-3,"name":"gantt part","code":"","level":2,"status":"STATUS_ACTIVE","canWrite":true,"start":1396994400000,"duration":2,"end":1397167199999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"depends":"","hasChild":false}
+     ,{"id":-4,"name":"editor part","code":"","level":2,"status":"STATUS_SUSPENDED","canWrite":true,"start":1397167200000,"duration":4,"end":1397685599999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"depends":"3","hasChild":false}
+     ,{"id":-5,"name":"testing","code":"","level":1,"status":"STATUS_SUSPENDED","canWrite":true,"start":1398981600000,"duration":6,"end":1399672799999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"depends":"2:5","description":"","progress":0,"hasChild":true}
+     ,{"id":-6,"name":"test on safari","code":"","level":2,"status":"STATUS_SUSPENDED","canWrite":true,"start":1398981600000,"duration":2,"end":1399327199999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"depends":"","hasChild":false}
+     ,{"id":-7,"name":"test on ie","code":"","level":2,"status":"STATUS_SUSPENDED","canWrite":true,"start":1399327200000,"duration":3,"end":1399586399999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"depends":"6","hasChild":false}
+     ,{"id":-8,"name":"test on chrome","code":"","level":2,"status":"STATUS_SUSPENDED","canWrite":true,"start":1399327200000,"duration":2,"end":1399499999999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"depends":"6","hasChild":false}
+     ],"selectedRow":0,"canWrite":true,"canWriteOnParent":true}
+   </textarea>
+
+  <button onclick="loadGanttFromServer();">load</button>
+</div>
+
+<style>
+  .resEdit {
+    padding: 15px;
+  }
+
+  .resLine {
+    width: 95%;
+    padding: 3px;
+    margin: 5px;
+    border: 1px solid #d0d0d0;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  .ganttButtonBar h1{
+    color: #000000;
+    font-weight: bold;
+    font-size: 28px;
+    margin-left: 10px;
+  }
+
+</style>
+
+<form id="gimmeBack" style="display:none;" action="../gimmeBack.jsp" method="post" target="_blank"><input type="hidden" name="prj" id="gimBaPrj"></form>
+
+<script type="text/javascript">
+
+var ge;  //this is the hugly but very friendly global var for the gantt editor
+var domainName = "Fixed";
+$(function() {
+
+  //load templates
+  $("#ganttemplates").loadTemplates();
+
+  // here starts gantt initialization
+  ge = new GanttMaster();
+  var workSpace = $("#workSpace");
+  workSpace.css({width:$(window).width() - 20,height:$(window).height() - 100});
+  ge.init(workSpace);
+
+  //inject some buttons (for this demo only)
+  $(".ganttButtonBar div").append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+  $(".ganttButtonBar div").addClass('buttons');
+  //overwrite with localized ones
+  loadI18n();
+
+  //simulate a data load from a server.
+  loadGanttFromServer();
+
+
+  //fill default Teamwork roles if any
+  //if (!ge.roles || ge.roles.length == 0) {
+    //setRoles();
+  //}
+
+  //fill default Resources roles if any
+  if (typeof ge.resources !== "undefined") {
+	  if (!ge.resources || ge.resources.length == 0) {
+	    setResource();
+	  }
+  }
+
+  /*/debug time scale
+  $(".splitBox2").mousemove(function(e){
+    var x=e.clientX-$(this).offset().left;
+    var mill=Math.round(x/(ge.gantt.fx) + ge.gantt.startMillis)
+    $("#ndo").html(x+" "+new Date(mill))
+  });*/
+
+  $(window).resize(function(){
+    workSpace.css({width:$(window).width() - 1,height:$(window).height() - workSpace.position().top});
+    workSpace.trigger("resize.gantt");
+  }).oneTime(150,"resize",function(){$(this).trigger("resize")});
+
+});
+
+
+function loadGanttFromServer(domain, taskId, callback) {
+	
+	switch(domain) {
+    case "Mobile":
+    	document.getElementById("Mobile").className = "button active big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button big";
+        break;
+    case "Fixed":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button active big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button big";
+        break;
+    case "Data":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button active big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button big";
+        break;
+    case "COMS":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button active big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button big";
+        break;
+    case "BitStream-Internet":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button big";
+        break;
+    case "Finance":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button big";
+        break;
+    case "Search":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button active big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button big";
+        break;
+    case "Production-CQs":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button active big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button big";
+        break;
+    case "Off-Dev":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button active big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button big";
+    	break;
+    case "Off-QA":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button active big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button big";
+    	break;
+    case "Off-UAT":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button active big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button big";
+    	break;
+    case "On-Dev":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button active big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button big";
+    	break;
+    case "On-QA":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button active big";
+    	document.getElementById("On-UAT").className = "button big";
+    	break;
+    case "On-UAT":
+    	document.getElementById("Mobile").className = "button big";
+    	document.getElementById("Fixed").className = "button big";
+    	document.getElementById("Data").className = "button big";
+    	document.getElementById("COMS").className = "button big";
+    	document.getElementById("Search").className = "button big";
+    	document.getElementById("Production-CQs").className = "button big";
+    	document.getElementById("Off-Dev").className = "button big";
+    	document.getElementById("Off-QA").className = "button big";
+    	document.getElementById("Off-UAT").className = "button big";
+    	document.getElementById("On-Dev").className = "button big";
+    	document.getElementById("On-QA").className = "button big";
+    	document.getElementById("On-UAT").className = "button active big";
+        break;
+/*     default:
+        default code block */
+	}
+
+  var taskId = $("#taskSelector").val();
+  var prof = new Profiler("loadServerSide");
+  
+  if (typeof domain !== "undefined") {
+	  domainName = domain;
+  }
+  
+  prof.reset();
+  $.getJSON("/gantter/projects/"+domainName, {CM:"LOADPROJECT",taskId:taskId}, function(response) {
+      prof.stop();
+      console.debug(response);
+      ge.loadProject(response);
+      ge.checkpoint(); //empty the undo stack
+      console.log('done');
+      if (typeof(callback)=="function") {
+        callback(response);
+      }
+  }).error(function(jqXHR, textStatus, errorThrown) {
+      console.log("error " + textStatus);
+      console.log("incoming Text " + jqXHR.responseText);
+  });
+}
+
+function loadGanttFromJira(domain, taskId, callback) {
+  openAjaxPopup();
+
+  var taskId = $("#taskSelector").val();
+  var prof = new Profiler("loadServerSide");
+  
+  if (typeof domain !== "undefined") {
+	  domainName = domain;
+  }
+  
+  prof.reset();
+  $.getJSON("/gantter/projects/reload/"+domainName, {CM:"LOADPROJECT",taskId:taskId}, function(response) {
+      prof.stop();
+      console.debug(response);
+      ge.loadProject(response);
+      ge.checkpoint(); //empty the undo stack
+      console.log('done');
+
+      closeBlackPopup();
+  	
+      if (typeof(callback)=="function") {
+        callback(response);
+      }
+  }).error(function(jqXHR, textStatus, errorThrown) {
+      console.log("error " + textStatus);
+      console.log("incoming Text " + jqXHR.responseText);
+  });
+}
+
+function doSearch(domain, taskId, callback) {
+	openSearchPopup();
+
+  	loadGanttFromServer('Search')
+}
+
+function doRTCToJira(domain, taskId, callback) {
+	openRTCToJiraPopup();
+}
+
+
+function viewReport(domain, taskId, callback) {
+	openReportPopup();
+}
+
+function saveGanttOnServer() {
+  if(!ge.canWrite)
+    return;
+
+
+  //this is a simulation: save data to the local storage or to the textarea
+  //saveInLocalStorage();
+
+
+  /**/
+  var prj = ge.saveProject();
+
+/*   delete prj.resources;
+  delete prj.roles;
+ */
+  var prof = new Profiler("saveServerSide");
+  prof.reset();
+
+  if (typeof ge.deletedTaskIds !== "undefined") {
+	  if (ge.deletedTaskIds.length>0) {
+	    if (!confirm("TASK_THAT_WILL_BE_REMOVED\n"+ge.deletedTaskIds.length)) {
+	      return;
+	    }
+	  }
+  }
+  $.ajax("/gantter/projects/"+domainName /*Mobile* "ganttAjaxController.jsp" */, {
+    dataType:"application/json",
+    data: JSON.stringify(prj),
+    type:"POST",
+
+    success: function(response) {
+      if (response.ok) {
+    	prof.stop();
+        if (response.project) {
+          ge.loadProject(response.project); //must reload as "tmp_" ids are now the good ones
+        } else {
+          ge.reset();
+        }
+      } else {
+        var errMsg="Errors saving project\n";
+        if (response.message) {
+          errMsg=errMsg+response.message+"\n";
+        }
+
+        if (typeof response.errorMessages !== "undefined") {
+	        if (response.errorMessages.length) {
+	          errMsg += response.errorMessages.join("\n");
+	        }
+        }
+        alert(errMsg);
+      }
+      
+    }
+
+  });
+  alert('Saved Successfully.');
+  console.debug('Saved Successfully.');
+}
+
+
+//-------------------------------------------  Create some demo data ------------------------------------------------------
+function setRoles() {
+  ge.roles = [
+    {
+      id:"tmp_1",
+      name:"Project Manager"
+    },
+    {
+      id:"tmp_2",
+      name:"Worker"
+    },
+    {
+      id:"tmp_3",
+      name:"Stakeholder/Customer"
+    }
+  ];
+}
+
+function setResource() {
+  var res = [];
+  /*for (var i = 1; i <= 10; i++) {
+    res.push({id:"tmp_" + i,name:"Resource " + i});
+  }*/
+  ge.resources = res;
+}
+
+
+function editResources(){
+
+}
+
+function clearGantt() {
+  ge.reset();
+}
+
+function loadI18n() {
+  GanttMaster.messages = {
+    "CANNOT_WRITE":                  "CANNOT_WRITE",
+    "CHANGE_OUT_OF_SCOPE":"NO_RIGHTS_FOR_UPDATE_PARENTS_OUT_OF_EDITOR_SCOPE",
+    "START_IS_MILESTONE":"START_IS_MILESTONE",
+    "END_IS_MILESTONE":"END_IS_MILESTONE",
+    "TASK_HAS_CONSTRAINTS":"TASK_HAS_CONSTRAINTS",
+    "GANTT_ERROR_DEPENDS_ON_OPEN_TASK":"GANTT_ERROR_DEPENDS_ON_OPEN_TASK",
+    "GANTT_ERROR_DESCENDANT_OF_CLOSED_TASK":"GANTT_ERROR_DESCENDANT_OF_CLOSED_TASK",
+    "TASK_HAS_EXTERNAL_DEPS":"TASK_HAS_EXTERNAL_DEPS",
+    "GANTT_ERROR_LOADING_DATA_TASK_REMOVED":"GANTT_ERROR_LOADING_DATA_TASK_REMOVED",
+    "ERROR_SETTING_DATES":"ERROR_SETTING_DATES",
+    "CIRCULAR_REFERENCE":"CIRCULAR_REFERENCE",
+    "CANNOT_DEPENDS_ON_ANCESTORS":"CANNOT_DEPENDS_ON_ANCESTORS",
+    "CANNOT_DEPENDS_ON_DESCENDANTS":"CANNOT_DEPENDS_ON_DESCENDANTS",
+    "INVALID_DATE_FORMAT":"INVALID_DATE_FORMAT",
+    "TASK_MOVE_INCONSISTENT_LEVEL":"TASK_MOVE_INCONSISTENT_LEVEL",
+
+    "GANTT_QUARTER_SHORT":"trim.",
+    "GANTT_SEMESTER_SHORT":"sem."
+  };
+}
+
+
+
+//-------------------------------------------  Get project file as JSON (used for migrate project from gantt to Teamwork) ------------------------------------------------------
+function getFile() {
+  $("#gimBaPrj").val(JSON.stringify(ge.saveProject()));
+  $("#gimmeBack").submit();
+  $("#gimBaPrj").val("");
+
+  /*  var uriContent = "data:text/html;charset=utf-8," + encodeURIComponent(JSON.stringify(prj));
+   neww=window.open(uriContent,"dl");*/
+}
+
+
+//-------------------------------------------  LOCAL STORAGE MANAGEMENT (for this demo only) ------------------------------------------------------
+Storage.prototype.setObject = function(key, value) {
+  this.setItem(key, JSON.stringify(value));
+};
+
+
+Storage.prototype.getObject = function(key) {
+  return this.getItem(key) && JSON.parse(this.getItem(key));
+};
+
+
+function loadFromLocalStorage() {
+  var ret;
+  /*if (localStorage) {
+    if (localStorage.getObject("teamworkGantDemo")) {
+      ret = localStorage.getObject("teamworkGantDemo");
+    }
+  } else {
+    $("#taZone").show();
+  }*/
+  if (!ret || !ret.tasks || ret.tasks.length == 0){
+    ret = JSON.parse($("#ta").val());
+
+
+    //actualiza data
+   /*  var offset=new Date().getTime()-ret.tasks[0].start;
+    for (var i=0;i<ret.tasks.length;i++)
+      ret.tasks[i].start=ret.tasks[i].start+offset; */
+
+
+  }
+  ge.loadProject(ret);
+  ge.checkpoint(); //empty the undo stack
+}
+
+
+function saveInLocalStorage() {
+  var prj = ge.saveProject();
+  if (localStorage) {
+    localStorage.setObject("teamworkGantDemo", prj);
+  } else {
+    $("#ta").val(JSON.stringify(prj));
+  }
+}
+
+
+//-------------------------------------------  Open a black popup for managing resources. This is only an axample of implementation (usually resources come from server) ------------------------------------------------------
+
+function editResources(){
+
+  //make resource editor
+  var resourceEditor = $.JST.createFromTemplate({}, "RESOURCE_EDITOR");
+  var resTbl=resourceEditor.find("#resourcesTable");
+  if (typeof ge.resources !== "undefined") {
+	  for (var i=0;i<ge.resources.length;i++){
+	    var res=ge.resources[i];
+	    resTbl.append($.JST.createFromTemplate(res, "RESOURCE_ROW"))
+	  }
+  }
+
+  //bind add resource
+  resourceEditor.find("#addResource").click(function(){
+    resTbl.append($.JST.createFromTemplate({id:"new",name:"resource"}, "RESOURCE_ROW"))
+  });
+
+  //bind save event
+  resourceEditor.find("#resSaveButton").click(function(){
+    var newRes=[];
+    //find for deleted res
+    if (typeof ge.resources !== "undefined") {
+	    for (var i=0;i<ge.resources.length;i++){
+	      var res=ge.resources[i];
+	      var row = resourceEditor.find("[resId="+res.id+"]");
+	      if (row.size()>0){
+	        //if still there save it
+	        var name = row.find("input[name]").val();
+	        if (name && name!="")
+	          res.name=name;
+	        newRes.push(res);
+	      } else {
+	        //remove assignments
+	        for (var j=0;j<ge.tasks.length;j++){
+	          var task=ge.tasks[j];
+	          var newAss=[];
+	          for (var k=0;k<task.assigs.length;k++){
+	            var ass=task.assigs[k];
+	            if (ass.resourceId!=res.id)
+	              newAss.push(ass);
+	          }
+	          task.assigs=newAss;
+	        }
+	      }
+	    }
+    }
+    //loop on new rows
+    resourceEditor.find("[resId=new]").each(function(){
+      var row = $(this);
+      var name = row.find("input[name]").val();
+      if (name && name!="")
+        newRes.push (new Resource("tmp_"+new Date().getTime(),name));
+    });
+
+    ge.resources=newRes;
+
+    closeBlackPopup();
+    ge.redraw();
+  });
+
+
+  var ndo = createBlackPage(400, 500).append(resourceEditor);
+}
+
+
+</script>
+
+
+<div id="gantEditorTemplates" style="display:none;">
+  <div class="__template__" type="GANTBUTTONS"><!--
+  <div class="ganttButtonBar noprint">
+    <div class="buttons">
+    <button onclick="$('#workSpace').trigger('zoomMinus.gantt');" class="button textual" title="zoom out"><span class="teamworkIcon">)</span></button>
+    <button onclick="$('#workSpace').trigger('zoomPlus.gantt');" class="button textual" title="zoom in"><span class="teamworkIcon">(</span></button>
+    <span class="ganttButtonSeparator"></span>
+    <button onclick="print();" class="button textual" title="print"><span class="teamworkIcon">p</span></button>
+    <span class="ganttButtonSeparator"></span>
+    <button onclick="editResources();" class="button textual" title="edit resources"><span class="teamworkIcon">M</span></button>
+	<span class="ganttButtonSeparator"></span>
+      <button onclick="saveGanttOnServer();" class="button textual" title="save"><span class="teamworkIcon">Z</span>&nbsp;Save</button>
+	  <span class="ganttButtonSeparator"></span>
+      <button onclick="loadGanttFromJira();" class="button textual" title="refresh"><span class="teamworkIcon">r</span>&nbsp;Reload</button>
+	  <span class="ganttButtonSeparator"></span>
+	  <button onclick="doRTCToJira();" class="button textual" title="search"><span class="teamworkIcon">i</span></button>
+ 	  <span class="ganttButtonSeparator"></span>
+ 	  <button onclick="doSearch();" class="button textual" title="search"><span class="teamworkIcon">L</span></button>
+ 	  <span class="ganttButtonSeparator"></span>
+ 	  <button onclick="viewReport();" class="button textual" title="Report"><span class="teamworkIcon">Y</span></button>
+	  <span class="ganttButtonSeparator"></span>
+	  <button id="Search" onclick="loadGanttFromServer('Search');" class="button big" title="Search">Last Search</button>
+	  <button id="Fixed" onclick="loadGanttFromServer('Fixed');" class="button active big" title="Load Fixed">Fixed</button>
+	  <button id="Mobile" onclick="loadGanttFromServer('Mobile');" class="button big" title="Load Mobile">Mobile</button>
+	  <button id="Data" onclick="loadGanttFromServer('Data');" class="button big" title="Load Data">Data</button>
+	  <button style="visibility:visible;" id="COMS" onclick="loadGanttFromServer('COMS');" class="button big" title="Load COMS">COMS</button>
+	  <span class="ganttButtonSeparator"></span>
+	  <button id="Production-CQs" onclick="loadGanttFromServer('Production-CQs');" class="button big" title="Load Production CQs">Production CQs</button>
+	  <span class="ganttButtonSeparator"></span>
+	  <button id="Off-Dev" onclick="loadGanttFromServer('Off-Dev');" class="button big" title="Load Off-Track Projects in Dev.">Off-Dev</button>
+	  <button id="Off-QA" onclick="loadGanttFromServer('Off-QA');" class="button big" title="Load Off-Track Projects in QA">Off-QA</button>
+	  <button id="Off-UAT" onclick="loadGanttFromServer('Off-UAT');" class="button big" title="Load Off-Track Projects in UAT">Off-UAT</button>
+  	  <span class="ganttButtonSeparator"></span>
+	  <button id="On-Dev" onclick="loadGanttFromServer('On-Dev');" class="button big" title="Load On-Track Projects in Dev.">On-Dev</button>
+	  <button id="On-QA" onclick="loadGanttFromServer('On-QA');" class="button big" title="Load On-Track Projects in QA">On-QA</button>
+	  <button id="On-UAT" onclick="loadGanttFromServer('On-UAT');" class="button big" title="Load On-Track Projects in UAT">On-UAT</button>
+    </div></div>
+  --></div>
+
+  <div class="__template__" type="TASKSEDITHEAD"><!--
+  <table class="gdfTable" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr style="height:40px">
+      <th class="gdfColHeader" style="width:36px;">Index</th>
+      <th class="gdfColHeader" style="width:36px;">Details</th>
+      <th class="gdfColHeader" style="width:36px;">Jira</th>
+      <th class="gdfColHeader" style="width:36px;">Type</th>
+      <th class="gdfColHeader gdfResizable" style="width:120px; text-align: left">Domain</th>
+      <th class="gdfColHeader gdfResizable" style="width:120px; text-align: left">Delivery Lead</th>
+      <th class="gdfColHeader gdfResizable" style="width:120px; text-align: left">Project Manager</th>
+      <th class="gdfColHeader gdfResizable" style="width:280px; text-align: left">Name</th>
+      <th class="gdfColHeader gdfResizable" style="width:100px; text-align: left">Project Status</th>
+      <th class="gdfColHeader gdfResizable" style="width:80px;">Dev. Start</th>
+      <th class="gdfColHeader gdfResizable" style="width:80px;">Dev. End</th>
+      <th class="gdfColHeader gdfResizable" style="width:55px;">Duration</th>
+      <th class="gdfColHeader gdfResizable" style="width:200px; text-align: left">Developers</th>
+      
+      <th class="gdfColHeader gdfResizable" style="width:80px;">RFQA</th>
+      <th class="gdfColHeader gdfResizable" style="width:80px;">RFA</th>
+      <th class="gdfColHeader gdfResizable" style="width:80px;">RFL</th>
+      
+      <th class="gdfColHeader gdfResizable" style="width:80px;">QA #</th>
+      <th class="gdfColHeader gdfResizable" style="width:80px;">UAT #</th>
+      <th class="gdfColHeader gdfResizable" style="width:80px;">Prod. #</th>
+    </tr>
+    </thead>
+  </table>
+  --></div>
+
+  <div class="__template__" type="TASKROW"><!--
+  <tr taskId="(#=obj.id#)" class="taskEditRow" level="(#=level#)">
+    <th class="gdfCell edit leftCol" align="center">(#=obj.getRow()+1#)</th>
+    <td class="gdfCell edit" align="center" style="cursor:pointer;"><span class="teamworkIcon" style="font-size:12px;" >R</span></th>
+    <td class="gdfCell noClip" align="center"><A HREF="http://jiracrm.etisalat.corp.ae/browse/(#=obj.link#)" target="_blank"><img src="res/link.png"</a></td>
+    <td class="gdfCell noClip" align="center"><div class="taskStatus cvcColorSquare" status="(#=obj.status#)"></div></td>
+    <td class="gdfCell" style="width:150px; text-align: left">(#=obj.type#)</td>
+    <td class="gdfCell" style="width:150px; text-align: left">(#=obj.dellead#)</td>
+    <td class="gdfCell" style="width:150px; text-align: left">(#=obj.pm#)</td>
+    <td class="gdfCell" style="text-align: left;text-decoration:(#=obj.progress>100?'line-through':'none'#);">(#=obj.name#)</td>
+    <td class="gdfCell" style="width:100px; text-align: left">(#=obj.projStatus#)</td>
+    <td class="gdfCell"><input type="text" name="start"  value="" class="txt-center date"></td>
+    <td class="gdfCell"><input type="text" name="end" value="" class="txt-center date"></td>
+    <td class="gdfCell"><input type="text" name="duration" value="(#=obj.duration#)" class="txt-center"></td>
+    <td class="gdfCell taskAssigs">(#=obj.getAssigsString()#)</td>
+    
+    <td class="gdfCell">(#=obj.rfqa#)</td>
+    <td class="gdfCell">(#=obj.rfa#)</td>
+    <td class="gdfCell">(#=obj.rfl#)</td>
+    
+    <td class="gdfCell">(#=obj.qa#)</td>
+    <td class="gdfCell">(#=obj.uat#)</td>
+    <td class="gdfCell">(#=obj.prod#)</td>
+  </tr>
+  --></div>
+
+  <div class="__template__" type="TASKEMPTYROW"><!--
+  <tr class="taskEditRow emptyRow" >
+    <th class="gdfCell" align="right"></th>
+    <td class="gdfCell noClip" align="center"></td>
+    <td class="gdfCell"></td>
+    <td class="gdfCell"></td>
+    <td class="gdfCell"></td>
+    <td class="gdfCell"></td>
+    <td class="gdfCell"></td>
+    <td class="gdfCell"></td>
+    <td class="gdfCell"></td>
+    <td class="gdfCell"></td>
+    
+    <td class="gdfCell"></td>
+    <td class="gdfCell"></td>
+    <td class="gdfCell"></td>
+    <td class="gdfCell"></td>
+    
+    <td class="gdfCell"></td>
+    <td class="gdfCell"></td>
+    <td class="gdfCell"></td>
+  </tr>
+  --></div>
+
+  <div class="__template__" type="TASKBAR"><!--
+  <div class="taskBox taskBoxDiv" taskId="(#=obj.id#)" >
+    <div class="layout (#=obj.hasExternalDep?'extDep':''#)">
+      <div class="taskStatus" status="(#=obj.status#)"></div>
+      <div class="taskProgress" style="width:(#=obj.progress>100?100:obj.progress#)%; background-color:(#=obj.progress>100?'red':'rgb(153,255,51);'#);"></div>
+      <div class="milestone (#=obj.startIsMilestone?'active':''#)" ></div>
+
+      <div class="taskLabel"></div>
+      <div class="milestone end (#=obj.endIsMilestone?'active':''#)" ></div>
+    </div>
+  </div>
+  --></div>
+
+  <div class="__template__" type="CHANGE_STATUS"><!--
+    <div class="taskStatusBox">
+      <div class="taskStatus cvcColorSquare" status="STATUS_ACTIVE" title="active"></div>
+      <div class="taskStatus cvcColorSquare" status="STATUS_DONE" title="completed"></div>
+      <div class="taskStatus cvcColorSquare" status="STATUS_FAILED" title="failed"></div>
+      <div class="taskStatus cvcColorSquare" status="STATUS_SUSPENDED" title="suspended"></div>
+      <div class="taskStatus cvcColorSquare" status="STATUS_UNDEFINED" title="undefined"></div>
+    </div>
+  --></div>
+
+
+  <div class="__template__" type="TASK_EDITOR">
+			<!--
+  <div class="ganttTaskEditor">
+  <table width="100%">
+    <tr>
+      <td width="70%">
+        <table cellpadding="5">
+           <tr>
+            <td><label for="code">code/short name</label><br><input type="text" name="code" id="code" value="" class="formElements"></td>
+           </tr>
+           <tr>
+            <td><label for="name">name</label><br><input type="text" name="name" id="name" value=""  size="55" class="formElements"></td>
+          </tr>
+        </table>
+      </td>
+      <td valign="top" width="30%">
+        <table cellpadding="5">
+          <tr>
+          	<td colspan="1"><label for="status">status</label><br><div id="status" class="taskStatus" status=""></div></td>
+          	<td colspan="1"><label for="progress">progress</label><br><input type="text" name="progress" id="progress" value="" size="3" class="formElements"></td>
+          	<td rowspan="1" class="graph" style="padding-left:50px"><label for="duration">dur.</label><br><input type="text" name="duration" id="duration" value=""  size="5" class="formElements"></td>
+          </tr>
+          <tr>
+          	<td><label for="start">start</label><br><input type="text" name="start" id="start"  value="" class="date" size="10" class="formElements"><input type="checkbox" id="startIsMilestone"> </td>
+          <td><label for="end">end</label><br><input type="text" name="end" id="end" value="" class="date"  size="10" class="formElements"><input type="checkbox" id="endIsMilestone"></td>
+        </table>
+      </td>
+    </tr>
+    </table>
+
+  <h2>assignees</h2>
+  <table  cellspacing="1" cellpadding="0" width="100%" id="assigsTable">
+    <tr>
+      <th style="width:100%;">assignee name</th>
+    </tr>
+  </table>
+  
+<br/>
+<h2>Defects</h2>
+  <table  cellspacing="1" cellpadding="0" width="100%" id="defectsTable">
+    <tr>
+      <th style="width:40px;">Id</th>
+      <th style="width:300px;">Description</th>
+      <th style="width:40px;">Status</th>
+      <th style="width:40px;">Env.</th>
+    </tr>
+  </table>
+
+<br/>
+<h2>Tasks</h2>
+  <table  cellspacing="1" cellpadding="0" width="100%" id="tasksTable">
+    <tr>
+      <th style="width:40px;">Id</th>
+      <th style="width:80px;">Description</th>
+      <th style="width:40px;">Raised By</th>
+      <th style="width:40px;">HPSM CR Number</th>
+      <th style="width:40px;">HPSM CR Task Number</th>
+    </tr>
+  </table>
+  
+  <div style="visibility:hidden; text-align: right; padding-top: 20px"><button id="saveButton" class="button big">save</button></div>
+  </div>
+  -->
+		</div>
+
+
+  <div class="__template__" type="ASSIGNMENT_ROW"><!--
+  <tr taskId="(#=obj.task.id#)" assigId="(#=obj.assig.id#)" class="assigEditRow" >
+    <td ><select style="width:100%;" type="select" name="resourceId"  class="formElements" disabled></select></td>
+  </tr>
+  --></div>
+  
+<div class="__template__" type="DEFECT_ROW"><!--
+  <tr taskId="(#=obj.task.id#)" defectId="(#=obj.defect.id#)" class="assigEditRow" >
+    <td><a href="https://rtcserver.etisalat.corp.ae:9443/ccm/web/projects/Projects#action=com.ibm.team.workitem.viewWorkItem&id=(#=obj.defect.id#)" target="_blank">(#=obj.defect.id#)</a></td>
+    <td>(#=obj.defect.title#)</td>
+    <td>(#=obj.defect.status#)</td>
+    <td>(#=obj.defect.environment#)</td>
+  </tr>
+  --></div>
+
+<div class="__template__" type="PTASK_ROW"><!--
+  <tr taskId="(#=obj.task.id#)" ptaskId="(#=obj.ptask.id#)" class="assigEditRow" >
+    <td><a href="https://rtcserver.etisalat.corp.ae:9443/ccm/web/projects/Projects#action=com.ibm.team.workitem.viewWorkItem&id=(#=obj.ptask.id#)" target="_blank">(#=obj.ptask.id#)</a></td>
+    <td>(#=obj.ptask.title#)</td>
+    <td>(#=obj.ptask.raisedby#)</td>
+    <td>(#=obj.ptask.hpsmcrno#)</td>
+    <td>(#=obj.ptask.hpsmcrtno#)</td>
+  </tr>
+  --></div>
+
+  <div class="__template__" type="RESOURCE_EDITOR"><!--
+  <div class="resourceEditor" style="padding: 5px;">
+
+    <h2>Project team</h2>
+    <table  cellspacing="1" cellpadding="0" width="100%" id="resourcesTable">
+      <tr>
+        <th style="width:100px;">name</th>
+        <th style="width:30px;" id="addResource"><span class="teamworkIcon" style="cursor: pointer">+</span></th>
+      </tr>
+    </table>
+
+    <div style="text-align: right; padding-top: 20px"><button id="resSaveButton" class="button big">save</button></div>
+  </div>
+  --></div>
+
+
+  <div class="__template__" type="RESOURCE_ROW"><!--
+  <tr resId="(#=obj.id#)" class="resRow" >
+    <td ><input type="text" name="name" value="(#=obj.name#)" style="width:100%;" class="formElements"></td>
+    <td align="center"><span class="teamworkIcon delRes" style="cursor: pointer">d</span></td>
+  </tr>
+  --></div>
+
+
+</div>
+<script type="text/javascript">
+  $.JST.loadDecorator("ASSIGNMENT_ROW", function(assigTr, taskAssig) {
+
+    var resEl = assigTr.find("[name=resourceId]");
+    for (var i in taskAssig.task.master.resources) {
+      var res = taskAssig.task.master.resources[i];
+      var opt = $("<option>");
+      opt.val(res.id).html(res.name);
+      if (taskAssig.assig.resourceId == res.id)
+        opt.attr("selected", "true");
+      resEl.append(opt);
+    }
+
+
+    var roleEl = assigTr.find("[name=roleId]");
+    for (var i in taskAssig.task.master.roles) {
+      var role = taskAssig.task.master.roles[i];
+      var optr = $("<option>");
+      optr.val(role.id).html(role.name);
+      if (taskAssig.assig.roleId == role.id)
+        optr.attr("selected", "true");
+      roleEl.append(optr);
+    }
+
+    if(taskAssig.task.master.canWrite && taskAssig.task.canWrite){
+      assigTr.find(".delAssig").click(function() {
+        var tr = $(this).closest("[assigId]").fadeOut(200, function() {
+          $(this).remove();
+        });
+      });
+    }
+
+
+  });
+</script>
+</body>
+</html>
