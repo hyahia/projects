@@ -38,8 +38,8 @@ public class JiraExtractor {
    private static final String COMS_FILTER_ID = "13927";
    private static final String DATE_DEV_FILTER_ID = "13920";
 
-   public static void main(String[] args) throws Exception {
-	   System.setProperty("javax.net.ssl.trustStore", "D:/CBCM/tools/cbcm-helper-tools/gantter-project/RTC.jks");
+   public static void main2(String[] args) throws Exception {
+	   System.setProperty("javax.net.ssl.trustStore", "/Users/Hossam/git/gantter/gantter/RTC.jks");
 //	   reload("Fixed");
 //	   getEpicAssignees("CBCMCOMS-2784");
 	   System.out.println(System.currentTimeMillis());
