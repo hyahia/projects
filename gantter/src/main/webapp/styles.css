@@ -3,7 +3,7 @@
 }
 
 .ganttButtonBar {
-	height: 65px;
+	height: 75px;
 }
 
 .button.textual, .button.buttonImg {
@@ -27,7 +27,7 @@ TH, .tableHeader {
     font-weight: bold;
     color: #ffffff;
     border: none;
-    background-color: #aaa;
+    background-color: #22aaa0;
     padding: 2px;
 	text-transform: capitalize;
 }
@@ -43,9 +43,8 @@ TH, .tableHeader {
 
 .top-bar h1 {
     font-size: 18px;
-/*     text-transform: uppercase;*/
     letter-spacing: 1px;
-    color: #373737;
+    color: #617777;
     float: left;
     padding-left: 10px;
     padding-top: 5px;

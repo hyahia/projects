@@ -978,7 +978,7 @@ function openSearchPopup(){
 
 	  var bdiv= $("<div>").css({width:width,position:"relative",height:"0px", textAlign:"right", margin:"auto"});
 
-	  var inputField=$("<input onkeyup='inputKeyUp(event)' id='searchTF' type='text' size='15' name='q' style='position:absolute;right:0px;top:0px;border: 1px solid rgb(126, 157, 185); padding-left: 18px; background: url(&quot;res/jira.png&quot;) left center no-repeat rgb(255, 255, 255);'>");
+	  var inputField=$("<input onkeyup='inputKeyUp(event)' id='searchTF' type='text' size='20' name='q' style='position:absolute;right:0px;top:0px;border: 1px solid rgb(126, 157, 185); padding-left: 18px; background: url(&quot;res/jira.png&quot;) left center no-repeat rgb(255, 255, 255);'>");
 	  
 	  var img=$("<img id='searchImageButton' src='res/search.png' style='cursor:pointer;position:absolute;right:-20px;top:5px;'>");
 	  var imgClose=$("<img id='closeImageButton' src='res/close.png' style='cursor:pointer;position:absolute;right:-40px;top:5px;'>");
@@ -1044,7 +1044,7 @@ function openSearchPopup(){
 }
 
 function openRTCToJiraPopup(){
-	  width='310px';
+	  width='250px';
 	  height='25px';
 
 	  $("#__blackpopup__").remove();

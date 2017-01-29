@@ -146,8 +146,8 @@ body{
 }
 
 .ganttButtonBar{
-    background: -webkit-linear-gradient(top, #666 0%,#b0b0b0 50%,#aaa 100%);
-    background: linear-gradient(to bottom, #666 0%,#b0b0b0 50%,#aaa 100%);
+    background: -webkit-linear-gradient(top, #2989d8 0%,#7db9e8 50%,rgba(0, 153, 255, 0.22) 100%);
+    background: linear-gradient(to bottom, #2989d8 0%,#7db9e8 50%,rgba(0, 153, 255, 0.22) 100%);
 }
 
 .ganttButtonBar .buttons, .ganttButtonBar h1 {

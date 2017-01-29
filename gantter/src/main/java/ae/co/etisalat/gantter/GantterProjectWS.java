@@ -18,10 +18,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ae.co.etisalat.gantter.util.JiraExtractor;
 
+
+/**
+ * @author Hossam Yahya
+ * The main web service controller class for Gantter
+ */
 @RestController
 @RequestMapping("/gantter")
 public class GantterProjectWS {
 
+	/**
+	 * @param domain
+	 * @return read the domain projects from file.
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/projects/{domain}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public String getDomainProjects(@PathVariable String domain) throws Exception {
@@ -52,6 +62,11 @@ public class GantterProjectWS {
 		return allText.toString();
 	}
 
+	/**
+	 * @param domain
+	 * @return the list of domain projects after reloading from Jira.
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/projects/reload/{domain}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public String reloadDomainProjects(@PathVariable String domain) throws Exception {
@@ -74,6 +89,11 @@ public class GantterProjectWS {
 		return allText;
 	}
 	
+	/**
+	 * @param proposalId
+	 * @return the designated project as JSON string from Jira.
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/projects/search/{proposalId}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public String searchProjects(@PathVariable String proposalId) throws Exception {
@@ -96,6 +116,12 @@ public class GantterProjectWS {
 		return allText;
 	}
 	
+	/**
+	 * @param domain
+	 * @param projects
+	 * @return the result of saving the projects for the specific domain
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/projects/{domain}", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public String setDomainProjects(@PathVariable String domain, @RequestBody String projects) throws Exception {
@@ -124,6 +150,10 @@ public class GantterProjectWS {
 		return "{\"DOMAIN\": \"" + domain + "\",{\"ACTION\": \"SAVE\", \"STATUS\": \"SUCCESS\"}";
 	}
 	
+	/**
+	 * @return the projects' status summary report.
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/report/", method = RequestMethod.GET, produces = "text/plain")
 	@ResponseBody
 	public String getReport() throws Exception {
@@ -131,6 +161,11 @@ public class GantterProjectWS {
 		return JiraExtractor.extractReport();
 	}
 	
+	/**
+	 * @param input
+	 * @return the result of migrating bugs from RTC to Jira. 
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/rtcjira/{input}", method = RequestMethod.GET, produces = "text/plain")
 	@ResponseBody
 	public String extractFromRTCToJira(@PathVariable String input) throws Exception {

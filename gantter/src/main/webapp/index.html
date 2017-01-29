@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"/>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <title>CBCM Project Management Tool V2.2</title>
+  <title>Project 360&#176; V3.0</title>
 
   <link rel=stylesheet href="platform.css" type="text/css">
   <link rel=stylesheet href="libs/dateField/jquery.dateField.css" type="text/css">
@@ -42,7 +42,7 @@
 </head>
 <body style="background-color: #fff;">
 
-<div class="top-bar"><h1>CBCM Project Management Tool V2.2</h1></div>
+<div class="top-bar float_center"><h1>Project 360&#176; V3.0</h1></div>
 <div id="workSpace" style="padding:0px; overflow-y:auto; overflow-x:hidden;border:1px solid rgb(55, 55, 55);position:relative;margin:0 0px"></div>
 
 <div id="taZone" style="display:none;" class="noprint">
@@ -63,6 +63,14 @@
 </div>
 
 <style>
+.float_center {
+  float: right;
+  position: relative;
+  left: -35%; 
+  text-align: left;
+  padding-bottom: 8px;
+}
+
   .resEdit {
     padding: 15px;
   }
@@ -683,17 +691,17 @@ function editResources(){
 	  <button id="Fixed" onclick="loadGanttFromServer('Fixed');" class="button active big" title="Load Fixed">Fixed</button>
 	  <button id="Mobile" onclick="loadGanttFromServer('Mobile');" class="button big" title="Load Mobile">Mobile</button>
 	  <button id="Data" onclick="loadGanttFromServer('Data');" class="button big" title="Load Data">Data</button>
-	  <button style="visibility:visible;" id="COMS" onclick="loadGanttFromServer('COMS');" class="button big" title="Load COMS">COMS</button>
-	  <span class="ganttButtonSeparator"></span>
-	  <button id="Production-CQs" onclick="loadGanttFromServer('Production-CQs');" class="button big" title="Load Production CQs">Production CQs</button>
-	  <span class="ganttButtonSeparator"></span>
-	  <button id="Off-Dev" onclick="loadGanttFromServer('Off-Dev');" class="button big" title="Load Off-Track Projects in Dev.">Off-Dev</button>
-	  <button id="Off-QA" onclick="loadGanttFromServer('Off-QA');" class="button big" title="Load Off-Track Projects in QA">Off-QA</button>
-	  <button id="Off-UAT" onclick="loadGanttFromServer('Off-UAT');" class="button big" title="Load Off-Track Projects in UAT">Off-UAT</button>
-  	  <span class="ganttButtonSeparator"></span>
-	  <button id="On-Dev" onclick="loadGanttFromServer('On-Dev');" class="button big" title="Load On-Track Projects in Dev.">On-Dev</button>
-	  <button id="On-QA" onclick="loadGanttFromServer('On-QA');" class="button big" title="Load On-Track Projects in QA">On-QA</button>
-	  <button id="On-UAT" onclick="loadGanttFromServer('On-UAT');" class="button big" title="Load On-Track Projects in UAT">On-UAT</button>
+	  <button style="visibility:hidden;" id="COMS" onclick="loadGanttFromServer('COMS');" class="button big" title="Load COMS">COMS</button>
+	  <span style="visibility:hidden;"  class="ganttButtonSeparator"></span>
+	  <button style="visibility:hidden;"  id="Production-CQs" onclick="loadGanttFromServer('Production-CQs');" class="button big" title="Load Production CQs">Production CQs</button>
+	  <span style="visibility:hidden;" class="ganttButtonSeparator"></span>
+	  <button style="visibility:hidden;" id="Off-Dev" onclick="loadGanttFromServer('Off-Dev');" class="button big" title="Load Off-Track Projects in Dev.">Off-Dev</button>
+	  <button style="visibility:hidden;" id="Off-QA" onclick="loadGanttFromServer('Off-QA');" class="button big" title="Load Off-Track Projects in QA">Off-QA</button>
+	  <button style="visibility:hidden;" id="Off-UAT" onclick="loadGanttFromServer('Off-UAT');" class="button big" title="Load Off-Track Projects in UAT">Off-UAT</button>
+  	  <span style="visibility:hidden;" class="ganttButtonSeparator"></span>
+	  <button style="visibility:hidden;" id="On-Dev" onclick="loadGanttFromServer('On-Dev');" class="button big" title="Load On-Track Projects in Dev.">On-Dev</button>
+	  <button style="visibility:hidden;" id="On-QA" onclick="loadGanttFromServer('On-QA');" class="button big" title="Load On-Track Projects in QA">On-QA</button>
+	  <button style="visibility:hidden;" id="On-UAT" onclick="loadGanttFromServer('On-UAT');" class="button big" title="Load On-Track Projects in UAT">On-UAT</button>
     </div></div>
   --></div>
 
