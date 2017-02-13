@@ -978,7 +978,7 @@ function openSearchPopup(){
 
 	  var bdiv= $("<div>").css({width:width,position:"relative",height:"0px", textAlign:"right", margin:"auto"});
 
-	  var inputField=$("<input onkeyup='inputKeyUp(event)' id='searchTF' type='text' size='20' name='q' style='position:absolute;right:0px;top:0px;border: 1px solid rgb(126, 157, 185); padding-left: 18px; background: url(&quot;res/jira.png&quot;) left center no-repeat rgb(255, 255, 255);'>");
+	  var inputField=$("<input placeholder='Proposal Id' onkeyup='inputKeyUp(event)' id='searchTF' type='text' size='20' name='q' style='position:absolute;right:0px;top:0px;border: 1px solid rgb(126, 157, 185); padding-left: 18px; background: url(&quot;res/jira.png&quot;) left center no-repeat rgb(255, 255, 255);'>");
 	  
 	  var img=$("<img id='searchImageButton' src='res/search.png' style='cursor:pointer;position:absolute;right:-20px;top:5px;'>");
 	  var imgClose=$("<img id='closeImageButton' src='res/close.png' style='cursor:pointer;position:absolute;right:-40px;top:5px;'>");
@@ -1059,10 +1059,10 @@ function openRTCToJiraPopup(){
 
 	  var bdiv= $("<div>").css({width:width,position:"relative",height:"0px", textAlign:"right", margin:"auto"});
 
-	  var inputField=$("<input onkeyup='inputKeyUp(event)' id='searchTF' type='text' size='70' name='q' style='position:absolute;left:-100px;top:0px;border: 1px solid rgb(126, 157, 185); padding-left: 18px; background: url(&quot;res/jira.png&quot;) left center no-repeat rgb(255, 255, 255);'>");
+	  var inputField=$("<input placeholder='Bugs RTC Ids Comma Separated' onkeyup='inputKeyUp(event)' id='searchTF' type='text' size='70' name='q' style='position:absolute;left:-100px;top:0px;border: 1px solid rgb(126, 157, 185); padding-left: 18px; background: url(&quot;res/jira.png&quot;) left center no-repeat rgb(255, 255, 255);'>");
 	  
-	  var img=$("<img id='searchImageButton' src='res/bug.png' style='cursor:pointer;position:absolute;right:-80px;top:5px;'>");
-	  var imgClose=$("<img id='closeImageButton' src='res/close.png' style='cursor:pointer;position:absolute;right:-100px;top:5px;'>");
+	  var img=$("<img id='searchImageButton' src='res/bug.png' style='cursor:pointer;position:absolute;right:-120px;top:5px;'>");
+	  var imgClose=$("<img id='closeImageButton' src='res/close.png' style='cursor:pointer;position:absolute;right:-140px;top:5px;'>");
 	  bdiv.append(inputField);
 	  bdiv.append(img);
 	  bdiv.append(imgClose);
