@@ -1,0 +1,9 @@
+net/intigral/code/verification/util/DBHelper.class
+net/intigral/code/verification/model/generate/PinGenerationResponse.class
+net/intigral/code/verification/model/verify/Response.class
+net/intigral/code/verification/web/MediaTypeFilter.class
+net/intigral/code/verification/ws/PinController.class
+net/intigral/code/verification/model/generate/Response.class
+net/intigral/code/verification/util/ApplicationConfiguration.class
+net/intigral/code/verification/web/MediaTypeRequestWrapper.class
+net/intigral/code/verification/model/verify/PinVerificationResponse.class
