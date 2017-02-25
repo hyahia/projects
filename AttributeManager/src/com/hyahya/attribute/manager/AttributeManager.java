@@ -1,4 +1,4 @@
-package com.etisalat.cim.attribute.manager;
+package com.hyahya.attribute.manager;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
