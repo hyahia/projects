@@ -20,11 +20,26 @@ public class SmartIDE2 {
         
         String result = sb.toString();
         while(ms.find()){
-//            System.out.println(ms.group());
             result = result.replace(ms.group(), "");
         }
         
-      System.out.println(result);
+        boolean includeExists = false, semiColonExists = false; 
+        
+        String[] codeLines = result.split("\n");
+        for(String line : codeLines){
+        	if(line.replaceAll("\\s", "").startsWith("#include"))
+        		includeExists = true;
+        	if(line.replaceAll("\\s", "").endsWith(";"))
+        		semiColonExists = true;
+        }
+        System.out.println(result);
+        if(!semiColonExists)
+          System.out.println("Python");
+        else if(includeExists)
+            System.out.println("C");
+        else
+            System.out.println("Java");
+
         
         s.close();
     }
