@@ -1,0 +1,2277 @@
+New log file opened at Sun Mar 19 22:03:58 EET 2017 by 9551@hossams-mbp
+jvm 9551@hossams-mbp
+jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.101-b13
+jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
+jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
+Starting event engine
+Starting sbt command engine
+Waiting for sbt command engine
+Command engine arguments=List()
+Command engine baseDirectory=/Users/Hossam/m800-log-management
+Command engine initial remaining commands List(--initialize, onFailure load-failed, boot, server-send-ready-for-request, server-handle-next-server-request)
+> --initialize
+> initialize
+> onFailure load-failed
+> boot
+> reload
+[Loading] Scanning directory /Users/Hossam/m800-log-management/project
+[Loading] Found non-root projects 
+[Loading] Done in /Users/Hossam/m800-log-management/project, returning: ()
+deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))))
+  :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.JUnitXmlReportPlugin)
+sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
+  :: sorting:: found: List(sbt.plugins.CorePlugin) not found List(sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
+  :: sorting:: found: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin) not found List(sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
+  :: sorting:: found: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin) not found List(sbt.plugins.JUnitXmlReportPlugin)
+  :: sorting:: found: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin) not found List()
+  :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
+[Loading] Done in /Users/Hossam/m800-log-management/project, returning: (m800-log-management-build)
+Loading project definition from /Users/Hossam/m800-log-management/project
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@2c68346c, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	
+[Loading] Scanning directory /Users/Hossam/m800-log-management
+[Loading] Found non-root projects 
+[Loading] Done in /Users/Hossam/m800-log-management, returning: ()
+deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(com.typesafe.sbteclipse.plugin.EclipsePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.BackgroundRunPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(com.typesafe.sbteclipse.plugin.EclipsePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.BackgroundRunPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.InteractionServicePlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.SendEventServicePlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.SerializersPlugin)))))
+  :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.SerializersPlugin,sbt.plugins.SendEventServicePlugin,sbt.plugins.InteractionServicePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.BackgroundRunPlugin,com.typesafe.sbteclipse.plugin.EclipsePlugin,sbt.plugins.JUnitXmlReportPlugin)
+sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.SerializersPlugin, sbt.plugins.SendEventServicePlugin, sbt.plugins.InteractionServicePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.BackgroundRunPlugin, com.typesafe.sbteclipse.plugin.EclipsePlugin, sbt.plugins.JUnitXmlReportPlugin)
+  :: sorting:: found: List(sbt.plugins.CorePlugin) not found List(sbt.plugins.SerializersPlugin, sbt.plugins.SendEventServicePlugin, sbt.plugins.InteractionServicePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.BackgroundRunPlugin, com.typesafe.sbteclipse.plugin.EclipsePlugin, sbt.plugins.JUnitXmlReportPlugin)
+  :: sorting:: found: List(sbt.plugins.CorePlugin, sbt.plugins.SerializersPlugin, sbt.plugins.SendEventServicePlugin, sbt.plugins.InteractionServicePlugin, sbt.plugins.IvyPlugin) not found List(sbt.plugins.JvmPlugin, sbt.plugins.BackgroundRunPlugin, com.typesafe.sbteclipse.plugin.EclipsePlugin, sbt.plugins.JUnitXmlReportPlugin)
+  :: sorting:: found: List(sbt.plugins.CorePlugin, sbt.plugins.SerializersPlugin, sbt.plugins.SendEventServicePlugin, sbt.plugins.InteractionServicePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin) not found List(sbt.plugins.BackgroundRunPlugin, com.typesafe.sbteclipse.plugin.EclipsePlugin, sbt.plugins.JUnitXmlReportPlugin)
+  :: sorting:: found: List(sbt.plugins.CorePlugin, sbt.plugins.SerializersPlugin, sbt.plugins.SendEventServicePlugin, sbt.plugins.InteractionServicePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.BackgroundRunPlugin, com.typesafe.sbteclipse.plugin.EclipsePlugin, sbt.plugins.JUnitXmlReportPlugin) not found List()
+  :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.SerializersPlugin, sbt.plugins.SendEventServicePlugin, sbt.plugins.InteractionServicePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.BackgroundRunPlugin, com.typesafe.sbteclipse.plugin.EclipsePlugin, sbt.plugins.JUnitXmlReportPlugin)
+[Loading] Done in /Users/Hossam/m800-log-management, returning: (m800-log-management)
+Set current project to hello-akka (in build file:/Users/Hossam/m800-log-management/)
+Reapplying settings...
+Set current project to hello-akka (in build file:/Users/Hossam/m800-log-management/)
+> iflast shell
+> server-send-ready-for-request
+> server-handle-next-server-request
+> {file:/Users/Hossam/m800-log-management/}m800-log-management/compile:discoveredMainClasses
+Evaluating tasks: compile:discoveredMainClasses
+Running task... Cancel: sbt.server.ServerTaskCancellation@47e0aedc, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed Mar 19, 2017 10:04:04 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/Users/Hossam/m800-log-management/}m800-log-management/compile:mainClass
+Evaluating tasks: compile:mainClass
+Running task... Cancel: sbt.server.ServerTaskCancellation@1aaff1c7, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed Mar 19, 2017 10:04:04 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/Users/Hossam/m800-log-management/}m800-log-management/compile:discoveredMainClasses
+Evaluating tasks: compile:discoveredMainClasses
+Running task... Cancel: sbt.server.ServerTaskCancellation@1793cff3, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed Mar 19, 2017 10:04:05 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/Users/Hossam/m800-log-management/}m800-log-management/compile:mainClass
+Evaluating tasks: compile:mainClass
+Running task... Cancel: sbt.server.ServerTaskCancellation@54e5c22e, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 0 s, completed Mar 19, 2017 10:04:05 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@54c5f450, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@611b26f1 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java:61: cannot find symbol
+Read from stdout: symbol:   method getContext()
+Read from stdout: location: class com.m800.log.management.actor.Main
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java:61: cannot find symbol
+  symbol:   method getContext()
+  location: class com.m800.log.management.actor.Main
+Read from stdout: getContext
+getContext
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 1 s, completed Mar 19, 2017 10:04:52 PM
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@30daab55, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 0 s, completed Mar 19, 2017 10:05:02 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@37e8a3dc, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@15b1df95 directly...
+Java compilation took 0.249731291 s
+Java analysis took 0.132722241 s
+Java compile + analysis took 0.389016279 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed Mar 19, 2017 10:05:09 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@6d200011, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@1580aaee directly...
+Java compilation took 0.131297852 s
+Java analysis took 0.030754564 s
+Java compile + analysis took 0.165680353 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 19, 2017 10:05:54 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@2ef81234, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@480750a2 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java:48: cannot find symbol
+Read from stdout: symbol:   class Date
+Read from stdout: location: class com.m800.log.management.actor.FileScanner
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java:48: cannot find symbol
+  symbol:   class Date
+  location: class com.m800.log.management.actor.FileScanner
+Read from stdout: Date
+Date
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 0 s, completed Mar 19, 2017 10:09:40 PM
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@26f1bf80, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@6a0ab1dd directly...
+Java compilation took 0.085542878 s
+Java analysis took 0.026315094 s
+Java compile + analysis took 0.115566793 s
+Invalidating /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java...
+Invalidating (transitively) by inheritance from /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java...
+Initial set of included nodes: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Invalidated by transitive inheritance dependency: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+The /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java source file has the following regular definitions changed:
+	postStop.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java
+Name hashing optimization doesn't apply to non-Scala dependency: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+New invalidations:
+	Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Initial set of included nodes: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Including /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java by /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+Including /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java by /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+Including /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java by /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+All newly invalidated sources after taking into account (previously) recompiled sources:Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Read from stdout: Compiling 2 Java sources to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 2 Java sources to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@6a0ab1dd directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.184627522 s
+Java analysis took 0.048188869 s
+Java compile + analysis took 0.235634507 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed Mar 19, 2017 10:09:47 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@5fa66a54, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5495bb1f directly...
+Java compilation took 0.085520622 s
+Java analysis took 0.048609343 s
+Java compile + analysis took 0.13792059 s
+Invalidating /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java...
+Invalidating (transitively) by inheritance from /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java...
+Initial set of included nodes: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Invalidated by transitive inheritance dependency: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+The /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java source file has the following regular definitions changed:
+	parser.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java
+Name hashing optimization doesn't apply to non-Scala dependency: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+New invalidations:
+	Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Initial set of included nodes: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Including /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java by /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+Including /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java by /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+Including /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java by /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+All newly invalidated sources after taking into account (previously) recompiled sources:Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Read from stdout: Compiling 2 Java sources to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 2 Java sources to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5495bb1f directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.111309416 s
+Java analysis took 0.054441066 s
+Java compile + analysis took 0.168746028 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed Mar 19, 2017 10:11:54 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@56a5a374, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@626b02b8 directly...
+Java compilation took 0.065078714 s
+Java analysis took 0.02204297 s
+Java compile + analysis took 0.088760836 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 19, 2017 10:13:23 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@1a48bf57, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5789851e directly...
+Java compilation took 0.092415705 s
+Java analysis took 0.025199535 s
+Java compile + analysis took 0.119824048 s
+Invalidating /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java...
+Invalidating (transitively) by inheritance from /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java...
+Initial set of included nodes: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+Invalidated by transitive inheritance dependency: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+The /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java source file has the following regular definitions changed:
+	lambda$onReceive$0, aggregator.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java
+Name hashing optimization doesn't apply to non-Scala dependency: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java
+New invalidations:
+	Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Initial set of included nodes: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Including /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java by /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java
+Including /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java by /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+Including /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java by /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+All newly invalidated sources after taking into account (previously) recompiled sources:Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Read from stdout: Compiling 2 Java sources to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 2 Java sources to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5789851e directly...
+Java compilation took 0.078068614 s
+Java analysis took 0.03277411 s
+Java compile + analysis took 0.113999858 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 19, 2017 10:22:22 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@2a7ab79c, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@69972d28 directly...
+Java compilation took 0.078113969 s
+Java analysis took 0.026003114 s
+Java compile + analysis took 0.106940421 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 19, 2017 10:23:31 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@6b243b73, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@14177ff4 directly...
+Java compilation took 0.04463526 s
+Java analysis took 0.018062809 s
+Java compile + analysis took 0.06528011 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 19, 2017 10:23:39 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4adaf5cf, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@1447bb66 directly...
+Java compilation took 0.039892696 s
+Java analysis took 0.0156683 s
+Java compile + analysis took 0.057538639 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 19, 2017 10:23:46 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@562ecaf1, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@33b29e1b directly...
+Java compilation took 0.047230269 s
+Java analysis took 0.01823597 s
+Java compile + analysis took 0.067185712 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 19, 2017 10:26:14 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@540a296b, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@14f0fdc1 directly...
+Java compilation took 0.061108845 s
+Java analysis took 0.017458077 s
+Java compile + analysis took 0.081065291 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 19, 2017 10:27:59 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@160aadb2, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@2e99e420 directly...
+Java compilation took 0.074907339 s
+Java analysis took 0.018428211 s
+Java compile + analysis took 0.095314599 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 19, 2017 10:38:10 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@1c6eb9e1, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@8358d8 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.054213026 s
+Java analysis took 0.016186917 s
+Java compile + analysis took 0.07192483 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 19, 2017 10:44:24 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4aab7c2c, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@b499436 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.09947105 s
+Java analysis took 0.023556151 s
+Java compile + analysis took 0.126164905 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 19, 2017 10:45:10 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@78d6f3a1, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@402b3901 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.04832739 s
+Java analysis took 0.018981973 s
+Java compile + analysis took 0.071182079 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 19, 2017 10:45:47 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@378c1b09, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 0 s, completed Mar 20, 2017 1:02:20 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@48757476, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@262dd9c4 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.129380438 s
+Java analysis took 0.027001151 s
+Java compile + analysis took 0.159887178 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:05:36 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@6ff168c7, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@693c34bd directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.076145211 s
+Java analysis took 0.021330612 s
+Java compile + analysis took 0.099454618 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:08:59 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@149fcce3, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@33ca55a directly...
+Java compilation took 0.063990566 s
+Java analysis took 0.02737183 s
+Java compile + analysis took 0.093286831 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:18:22 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4f0d4459, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5bbbf023 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.063431153 s
+Java analysis took 0.01629212 s
+Java compile + analysis took 0.081756402 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:18:51 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@695c411b, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@79ff1adb directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.078362559 s
+Java analysis took 0.029963622 s
+Java compile + analysis took 0.110501548 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:19:18 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@2cc92111, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5c44124f directly...
+Java compilation took 0.084108021 s
+Java analysis took 0.021539133 s
+Java compile + analysis took 0.107854048 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:25:55 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4dc70aa, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@488a049b directly...
+Java compilation took 0.036437361 s
+Java analysis took 0.016387684 s
+Java compile + analysis took 0.054365942 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:26:00 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4f1429cd, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5c7a4d1f directly...
+Java compilation took 0.049958 s
+Java analysis took 0.017779171 s
+Java compile + analysis took 0.069267325 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:26:50 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@c63c6e4, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@46ed9df8 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.068878907 s
+Java analysis took 0.022131014 s
+Java compile + analysis took 0.092865487 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:30:48 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@2562bb8f, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@327eeecf directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.058911729 s
+Java analysis took 0.018957904 s
+Java compile + analysis took 0.079478032 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:31:38 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@fb13143, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@12e3a29a directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.05028018 s
+Java analysis took 0.018764556 s
+Java compile + analysis took 0.072397777 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:33:19 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@3602c99e, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@769eeb34 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.05170384 s
+Java analysis took 0.015039731 s
+Java compile + analysis took 0.068490762 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:33:48 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@248e758c, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@e58cf85 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java:28: cannot find symbol
+Read from stdout: symbol:   variable filePath
+Read from stdout: location: class com.m800.log.management.actor.FileScanner
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java:28: cannot find symbol
+  symbol:   variable filePath
+  location: class com.m800.log.management.actor.FileScanner
+Read from stdout: filePath
+filePath
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 0 s, completed Mar 20, 2017 1:36:57 AM
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@6f95face, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@7498189c directly...
+Java compilation took 0.033048876 s
+Java analysis took 0.015234534 s
+Java compile + analysis took 0.049637274 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:37:12 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@7b64e7a2, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@666e8387 directly...
+Java compilation took 0.047367855 s
+Java analysis took 0.019812022 s
+Java compile + analysis took 0.069349743 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:37:47 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@2c57e692, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@19702bb8 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.033538267 s
+Java analysis took 0.010529859 s
+Java compile + analysis took 0.045597646 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:39:10 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@28a7de32, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@3f66e97f directly...
+Java compilation took 0.043041533 s
+Java analysis took 0.016135349 s
+Java compile + analysis took 0.06132824 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:39:34 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@f2126a1, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@ecf416f directly...
+Java compilation took 0.034216233 s
+Java analysis took 0.015149935 s
+Java compile + analysis took 0.050606176 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:41:51 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@622e88cd, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@680730cb directly...
+Java compilation took 0.058140848 s
+Java analysis took 0.020961149 s
+Java compile + analysis took 0.080862278 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:42:15 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@7176c4f1, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@355da61d directly...
+Java compilation took 0.022936156 s
+Java analysis took 0.011344623 s
+Java compile + analysis took 0.035868781 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:42:44 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@58a03de6, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@659b1359 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java:34: missing return statement
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java:34: missing return statement
+Read from stdout: {
+Read from stdout: 		
+Read from stdout: 	}
+{
+		
+	}
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 0 s, completed Mar 20, 2017 1:44:16 AM
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4094f094, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@3af26730 directly...
+Java compilation took 0.042912313 s
+Java analysis took 0.017339309 s
+Java compile + analysis took 0.061901524 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:45:39 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@7c54b6d9, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@7e072096 directly...
+Java compilation took 0.041209375 s
+Java analysis took 0.020362252 s
+Java compile + analysis took 0.064248629 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:46:21 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@25695287, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@2d0299de directly...
+Java compilation took 0.033190996 s
+Java analysis took 0.009344219 s
+Java compile + analysis took 0.0441405 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:48:46 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@3280a005, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@56b7ec0 directly...
+Java compilation took 0.034280384 s
+Java analysis took 0.011134372 s
+Java compile + analysis took 0.047874888 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:49:12 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@3ca8d05e, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@123f52ca directly...
+Java compilation took 0.039051717 s
+Java analysis took 0.010729971 s
+Java compile + analysis took 0.051472341 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:49:18 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@56f6127f, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@747b5ce1 directly...
+Java compilation took 0.167942657 s
+Java analysis took 0.051020668 s
+Java compile + analysis took 0.222967149 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:50:32 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@29c82dd1, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@64b6a864 directly...
+Java compilation took 0.078715523 s
+Java analysis took 0.033601077 s
+Java compile + analysis took 0.11558024 s
+Invalidating /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java...
+Invalidating (transitively) by inheritance from /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java...
+Initial set of included nodes: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Invalidated by transitive inheritance dependency: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+The /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java source file has the following regular definitions changed:
+	postStop.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java
+Name hashing optimization doesn't apply to non-Scala dependency: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+New invalidations:
+	Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Initial set of included nodes: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Including /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java by /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+Including /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java by /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java
+Including /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileParser.java by /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+All newly invalidated sources after taking into account (previously) recompiled sources:Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Read from stdout: Compiling 2 Java sources to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 2 Java sources to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@64b6a864 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.175181323 s
+Java analysis took 0.055661981 s
+Java compile + analysis took 0.234729117 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed Mar 20, 2017 1:50:58 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@5d3a6e9b, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileScanner.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@ab76c3f directly...
+Java compilation took 0.089924783 s
+Java analysis took 0.057893489 s
+Java compile + analysis took 0.153526154 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:51:05 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@2d6c3a80, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@791ee86c directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.107131743 s
+Java analysis took 0.058104257 s
+Java compile + analysis took 0.172129531 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:54:29 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@3b7da0b1, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@3309a39c directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.09022864 s
+Java analysis took 0.026032532 s
+Java compile + analysis took 0.120181046 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:54:35 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4f254abb, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@c35b77b directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.094763831 s
+Java analysis took 0.047703388 s
+Java compile + analysis took 0.145998582 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 1:54:44 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@48bd5567, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5e4ef0ee directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.137865546 s
+Java analysis took 0.040063926 s
+Java compile + analysis took 0.181902969 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 2:00:58 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@1e19f655, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@52407ee2 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.246050254 s
+Java analysis took 0.1273565 s
+Java compile + analysis took 0.3841652 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed Mar 20, 2017 2:04:08 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@65c93a17, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5a8f2601 directly...
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java uses or overrides a deprecated API.
+Read from stdout: /Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/Main.java: Recompile with -Xlint:deprecation for details.
+Java compilation took 0.267655995 s
+Java analysis took 0.083405255 s
+Java compile + analysis took 0.366891785 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed Mar 20, 2017 2:04:14 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@38f8509, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@10499cd0 directly...
+Java compilation took 0.056647462 s
+Java analysis took 0.024370478 s
+Java compile + analysis took 0.083318819 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 2:08:33 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@ca9f6af, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/Hossam/m800-log-management/src/main/java/com/m800/log/management/actor/FileAggregator.java)
+
+Read from stdout: Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Compiling 1 Java source to /Users/Hossam/m800-log-management/target/scala-2.11/classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@6a0582bd directly...
+Java compilation took 0.043096494 s
+Java analysis took 0.014876707 s
+Java compile + analysis took 0.059958091 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed Mar 20, 2017 2:10:48 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/Users/Hossam/m800-log-management/}m800-log-management/compile:discoveredMainClasses
+Evaluating tasks: compile:discoveredMainClasses
+Running task... Cancel: sbt.server.ServerTaskCancellation@6b7a2456, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 0 s, completed Mar 20, 2017 10:55:46 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/Users/Hossam/m800-log-management/}m800-log-management/compile:mainClass
+Evaluating tasks: compile:mainClass
+Running task... Cancel: sbt.server.ServerTaskCancellation@487a5ca0, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 0 s, completed Mar 20, 2017 10:55:47 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+Done executing sbt server engine, result Right(Exit(0))
+Closing listening server socket
+Waiting for socket thread
+Waiting for request processor thread
+Waiting for command engine result
+Returning control to sbt launcher with result Exit(0)
+Closing the 9551@hossams-mbp logs at Mon Mar 20 10:55:48 EET 2017, goodbye.
