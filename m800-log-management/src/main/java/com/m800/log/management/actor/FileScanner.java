@@ -6,9 +6,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-import com.m800.log.management.Main.Done;
-import com.m800.log.management.Main.Parse;
-import com.m800.log.management.Main.Scan;
+import com.m800.log.management.actor.message.Done;
+import com.m800.log.management.actor.message.Parse;
+import com.m800.log.management.actor.message.Scan;
 
 import akka.actor.ActorRef;
 import akka.actor.Props;

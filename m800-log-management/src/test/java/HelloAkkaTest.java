@@ -11,8 +11,8 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.m800.log.management.Main.Scan;
 import com.m800.log.management.actor.FileScanner;
+import com.m800.log.management.actor.message.Scan;
 
 import akka.actor.ActorSystem;
 import akka.actor.Props;

@@ -3,10 +3,10 @@ package com.m800.log.management.actor;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.m800.log.management.Main.Done;
-import com.m800.log.management.Main.EndOfFile;
-import com.m800.log.management.Main.StartOfFile;
-import com.m800.log.management.Main.Line;
+import com.m800.log.management.actor.message.Done;
+import com.m800.log.management.actor.message.EndOfFile;
+import com.m800.log.management.actor.message.Line;
+import com.m800.log.management.actor.message.StartOfFile;
 
 import akka.actor.UntypedActor;
 import akka.event.Logging;

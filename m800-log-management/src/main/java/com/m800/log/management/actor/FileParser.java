@@ -5,12 +5,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-import com.m800.log.management.Main.StartOfFile;
-import com.m800.log.management.Main.Line;
-import com.m800.log.management.Main.EndOfFile;
-import com.m800.log.management.Main.Parse;
-import com.m800.log.management.Main.Done;
 import com.m800.log.management.actor.FileAggregator;
+import com.m800.log.management.actor.message.Done;
+import com.m800.log.management.actor.message.EndOfFile;
+import com.m800.log.management.actor.message.Line;
+import com.m800.log.management.actor.message.Parse;
+import com.m800.log.management.actor.message.StartOfFile;
 
 import akka.actor.ActorRef;
 import akka.actor.Props;
