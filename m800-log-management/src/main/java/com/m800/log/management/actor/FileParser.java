@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-import com.m800.log.management.actor.FileAggregator;
 import com.m800.log.management.actor.message.Done;
 import com.m800.log.management.actor.message.EndOfFile;
 import com.m800.log.management.actor.message.Line;
@@ -23,13 +22,17 @@ import akka.event.LoggingAdapter;
  * 	@author Hossam Yahya
  */
 public class FileParser extends UntypedActor {
+	/**
+	 * The path of the current file being processed.
+	 */
 	private String filePath;
+	
     private final LoggingAdapter log = Logging.getLogger(getContext().system(), this);
 
     public void onReceive(Object message) {
         if (message instanceof Parse){
         	filePath = ((Parse)message).filePath;
-            log.debug("{} file is being parsed", filePath);
+            log.debug("<{}> file is being parsed", filePath);
 
         	final ActorRef aggregator = this.getContext().actorOf(Props.create(FileAggregator.class), "aggregator" + filePath.replaceAll("/", "_"));
 
@@ -47,17 +50,25 @@ public class FileParser extends UntypedActor {
 					aggregator.tell(new EndOfFile(filePath), self());
 					
 				} catch (IOException e) {
-					e.printStackTrace();
+	    			log.error(e, String.format("Error parsing file at <{}>.", filePath));
 				}
 	    	
-	            log.debug("{} file is parsed successfully", filePath);
+	          log.debug("<{}> file is parsed successfully", filePath);
 
 		} else if (message instanceof Done) {
 			// Tell the 'scanner' to terminate.
 			getSender().tell(new Done(), self());
 			//  Stop the 'parser'.
 			this.getContext().stop(self());
-		} else
+		} else {
 			unhandled(message);
+		}
     }
+    
+    /**
+	 * @return the filePath
+	 */
+	public String getFilePath() {
+		return filePath;
+	}
 }

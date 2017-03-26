@@ -5,6 +5,7 @@
 	<artifactId>log-management</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -38,9 +39,11 @@
 					</descriptorRefs>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 	<dependencies>
+
 		<dependency>
 			<groupId>com.typesafe.akka</groupId>
 			<artifactId>akka-actor_2.11</artifactId>
