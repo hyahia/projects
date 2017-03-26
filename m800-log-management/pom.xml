@@ -31,7 +31,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>com.m800.log.management.Main</mainClass>
+							<mainClass>com.m800.log.management.LogManagementMain</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
